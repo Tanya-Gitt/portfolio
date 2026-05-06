@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { personal } from '../data';
 import './styles/Navbar.css';
 
 const links = [
@@ -26,7 +27,7 @@ export default function Navbar() {
           <li key={l.href}><a href={l.href} data-hover>{l.label}</a></li>
         ))}
       </ul>
-      <a href="mailto:tanyash30.05@gmail.com" data-hover>
+      <a href={`mailto:${personal.email}`} data-hover>
         <button className="nav-cta">Hire Me</button>
       </a>
     </nav>

@@ -1,0 +1,121 @@
+.about {
+  padding: 120px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-left h2 {
+  font-family: var(--font-main);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.about-left h2 .hl {
+  color: var(--accent);
+}
+
+.about-left p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.about-left p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.about-quote {
+  margin-top: 36px;
+  padding: 24px 28px;
+  border-left: 2px solid var(--accent);
+  background: var(--card-bg);
+  border-radius: 0 8px 8px 0;
+}
+
+.about-quote p {
+  font-family: var(--font-main);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.stat-card:hover {
+  border-color: rgba(0, 245, 196, 0.3);
+  transform: translateX(6px);
+}
+
+.stat-num {
+  font-family: var(--font-main);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.about-athletics {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(0, 245, 196, 0.05) 100%);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 12px;
+  padding: 28px 32px;
+}
+
+.about-athletics .stat-num {
+  color: #a78bfa;
+  font-size: 32px;
+}
+
+.about-athletics .stat-label strong {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .about { padding: 80px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-left h2 { font-size: 36px; }
+}

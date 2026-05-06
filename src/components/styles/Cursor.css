@@ -1,0 +1,40 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.cursor-ring {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 245, 196, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease, width 0.2s, height 0.2s, opacity 0.2s;
+}
+
+.cursor.hovering .cursor-dot {
+  width: 12px;
+  height: 12px;
+}
+
+.cursor.hovering .cursor-ring {
+  width: 54px;
+  height: 54px;
+  border-color: var(--accent);
+}

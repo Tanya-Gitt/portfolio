@@ -43,7 +43,7 @@ export const projects = [
     tech: ['Next.js 16', 'TypeScript', 'Gemini AI', 'Zustand', 'Framer Motion', 'Tailwind v4', 'Web Audio API'],
     link: 'https://suspect-omega.vercel.app',
     metric: '6 cases · 4 difficulty modes',
-    year: '2025',
+    year: '2026',
   },
   {
     id: 'analytiq',

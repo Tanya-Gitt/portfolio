@@ -36,6 +36,16 @@ export const services = [
 
 export const projects = [
   {
+    id: 'suspect',
+    name: 'SUSPECT',
+    tagline: 'AI-powered noir interrogation game',
+    desc: 'Browser-based detective game where every suspect is a live Gemini LLM — they lie, deflect, contradict, and crack under pressure. Mood system (calm → cracking → caught), detective\'s notebook, procedural Web Audio noir soundtrack, custom Ember design system. 6 cases, 4 difficulty modes.',
+    tech: ['Next.js 16', 'TypeScript', 'Gemini AI', 'Zustand', 'Framer Motion', 'Tailwind v4', 'Web Audio API'],
+    link: 'https://suspect-omega.vercel.app',
+    metric: '6 cases · 4 difficulty modes',
+    year: '2025',
+  },
+  {
     id: 'analytiq',
     name: 'Analytiq',
     tagline: 'Self-hostable Segment + Mixpanel alternative',

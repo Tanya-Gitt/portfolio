@@ -125,11 +125,13 @@ function ProjectOverlay({
   index: number;
   onClose: () => void;
 }) {
-  /* Scroll-driven parallax on the hero section */
+  /* Scroll-driven parallax on the hero section.
+     Only Y — opacity is fixed at 1. The scroll container ref is
+     set AFTER mount so heroOpacity from scrollYProgress would read
+     the window scroll briefly on first render, causing grey. */
   const scrollRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ container: scrollRef });
   const heroY = useTransform(scrollYProgress, [0, 0.5], ['0%', '-22%']);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.38], [1, 0]);
 
   return (
     <motion.div
@@ -149,8 +151,8 @@ function ProjectOverlay({
         ESC / Close
       </motion.button>
 
-      {/* ── Hero zone — parallaxes as you scroll ── */}
-      <motion.div className="overlay-hero" style={{ y: heroY, opacity: heroOpacity }}>
+      {/* ── Hero zone — Y parallax only, opacity always 1 ── */}
+      <motion.div className="overlay-hero" style={{ y: heroY }}>
         {/* Chapter label + drawing line */}
         <motion.div
           className="overlay-chapter"

@@ -145,7 +145,7 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 120px 10vw 96px;
-  will-change: transform, opacity;
+  will-change: transform;
 }
 
 /* Chapter */
@@ -178,7 +178,7 @@
   font-weight: 800;
   letter-spacing: -6px;
   line-height: 0.88;
-  color: var(--text);
+  color: #ffffff;
   margin-bottom: 40px;
   will-change: transform;
   display: block;

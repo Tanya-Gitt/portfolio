@@ -45,6 +45,7 @@ export interface Project {
   metric: string;
   tech: string[];
   link: string;
+  role: string;
 }
 
 export const projects: Project[] = [
@@ -65,6 +66,7 @@ export const projects: Project[] = [
     metric: '6 cases · 4 difficulty modes',
     tech: ['Next.js 16', 'TypeScript', 'Gemini AI', 'Zustand', 'Framer Motion', 'Tailwind v4', 'Web Audio API'],
     link: 'https://suspect-omega.vercel.app',
+    role: 'Full-stack solo build — LLM prompt engineering for 6 suspect personalities, mood-pressure engine, procedural noir soundtrack via Web Audio API, and the Ember design system from scratch.',
   },
   {
     id: 'ripple',
@@ -83,6 +85,7 @@ export const projects: Project[] = [
     metric: '100 agents · ~90s simulation',
     tech: ['Python', 'FastAPI', 'React.js', 'D3.js', 'WebSocket', 'Groq', 'Cerebras'],
     link: 'https://ripple-lovat.vercel.app',
+    role: 'Architected the entire simulation engine — async agent orchestration across 13 Groq API keys, knowledge graph extraction pass, bias detection layer, cascade event injection, and the D3 real-time visualization.',
   },
   {
     id: 'analytiq',
@@ -102,6 +105,7 @@ export const projects: Project[] = [
     metric: '258 tests · 0 mocks · 6 containers',
     tech: ['Python', 'FastAPI', 'Next.js 15', 'PostgreSQL', 'asyncpg', 'Docker', 'GoTrue'],
     link: 'https://github.com/Tanya-Gitt/analytiq',
+    role: 'Solo full-stack from schema to frontend — designed the PostgreSQL RLS isolation model, built the FastAPI backend and Next.js UI, engineered the AI Copilot, and wrote the 258-test zero-mock test suite.',
   },
   {
     id: 'shortlyst',
@@ -119,6 +123,7 @@ export const projects: Project[] = [
     metric: '1,000+ resumes · 200–500ms each',
     tech: ['Python', 'spaCy', 'FastAPI', 'React 19', 'pdfminer', 'Framer Motion'],
     link: '#',
+    role: 'Built the NLP scoring engine from scratch — spaCy lemmatization pipeline, weighted 70/30 must-have ranking, multi-format parser (PDF/DOCX/TXT), and word-boundary regex to eliminate false positives.',
   },
   {
     id: 'trustlens',
@@ -136,6 +141,7 @@ export const projects: Project[] = [
     metric: '859 verified breaches · 5-factor scoring',
     tech: ['Python', 'Flask', 'JavaScript', 'HaveIBeenPwned API', 'Docker'],
     link: '#',
+    role: 'Designed the scoring algorithm and data pipeline — five-factor breach weighting, four-tier fallback chain (internal DB → 859 HIBP domains → live API → web search), and server-side invariant verification scripts.',
   },
   {
     id: 'competitive',
@@ -153,6 +159,7 @@ export const projects: Project[] = [
     metric: 'Real-time monitoring · automated insights',
     tech: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'SQLite'],
     link: '#',
+    role: 'Built the entire platform solo — Streamlit dashboard, automated insight generation pipeline, SQLite trend accumulation layer, and configurable metrics architecture so PMs define what "competition" means for their market.',
   },
 ];
 

@@ -34,66 +34,125 @@ export const services = [
   },
 ];
 
-export const projects = [
+export interface Project {
+  id: string;
+  name: string;
+  year: string;
+  tagline: string;
+  problem: string;
+  build: string[];
+  result: string;
+  metric: string;
+  tech: string[];
+  link: string;
+}
+
+export const projects: Project[] = [
   {
     id: 'suspect',
     name: 'SUSPECT',
-    tagline: 'AI-powered noir interrogation game',
-    desc: 'Browser-based detective game where every suspect is a live Gemini LLM — they lie, deflect, contradict, and crack under pressure. Mood system (calm → cracking → caught), detective\'s notebook, procedural Web Audio noir soundtrack, custom Ember design system. 6 cases, 4 difficulty modes.',
+    year: '2026',
+    tagline: 'Every suspect lies. Every answer costs something. Only one killed.',
+    problem: 'Every detective game ever made is a lie. The "AI" is a decision tree. The suspect\'s response was written two years ago by a writer in an office. You\'re not interrogating anyone — you\'re clicking through a script. We decided to fix that.',
+    build: [
+      'Each suspect runs on a live Gemini 2.0 LLM with a private system prompt — their secrets, their lies, their breaking points. The client never sees it.',
+      'A mood engine tracks pressure across the conversation: calm → evasive → nervous → cracking → caught. The UI responds — border glow, portrait filter, ambient audio tension — all in real time.',
+      'The entire noir soundtrack is generated procedurally via Web Audio API. No audio files. Pure math turning into atmosphere.',
+      'Built a custom design system called Ember — film grain, CRT scanlines, phosphor glow, vignette — because the game needed to feel like a 1940s case file, not a React app.',
+      'Server-side secret enforcement: the murderer\'s identity and each suspect\'s role are resolved on the server. The client is always in the dark. Just like the player.',
+    ],
+    result: 'Six murder cases. Four difficulty modes ranging from Greenhorn to Obsession Mode — where even the person who seems to be lying might be telling the truth about something. No two interrogations play out the same.',
+    metric: '6 cases · 4 difficulty modes',
     tech: ['Next.js 16', 'TypeScript', 'Gemini AI', 'Zustand', 'Framer Motion', 'Tailwind v4', 'Web Audio API'],
     link: 'https://suspect-omega.vercel.app',
-    metric: '6 cases · 4 difficulty modes',
-    year: '2026',
-  },
-  {
-    id: 'analytiq',
-    name: 'Analytiq',
-    tagline: 'Self-hostable Segment + Mixpanel alternative',
-    desc: 'Open-source product & e-commerce analytics platform replacing $860+/month SaaS stack. PostgreSQL Row-Level Security, 100 req/s ingest, 258-test suite with zero mocks.',
-    tech: ['Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'TypeScript', 'Docker'],
-    link: 'https://github.com/Tanya-Gitt/analytiq',
-    metric: '258 tests · 0 mocks',
-    year: '2026',
   },
   {
     id: 'ripple',
     name: 'Ripple',
-    tagline: 'Collective Intelligence Prediction Engine',
-    desc: '100+ AI agent personas debate and react to news/policy events across 3 simulation rounds. Multi-provider LLM cascade (Cerebras, NVIDIA NIM, Groq) with live knowledge graph extraction.',
-    tech: ['Python', 'FastAPI', 'React.js', 'D3.js', 'Firebase', 'WebSocket'],
-    link: 'https://ripple-lovat.vercel.app',
-    metric: '100+ AI agents',
     year: '2025',
+    tagline: 'Markets aren\'t rational. Neither are our agents.',
+    problem: 'A single AI model reading a news article gives you one opinion. But markets move because thousands of people with different biases, geographies, and risk tolerances all react differently — then react to each other\'s reactions. No single model captures that. We built the crowd.',
+    build: [
+      '100+ distinct AI agent personas — each with a defined geography, risk tolerance, political lean, and sector bias — run in parallel using async key pools across 13 Groq API keys.',
+      'Three simulation rounds: initial reaction, cross-agent debate, and final position after seeing what others believe. Emergent cascade events inject realistic disruptions mid-simulation — panic waves, misinformation — that ripple through the social graph.',
+      'Before any agent runs, a knowledge graph extraction pass maps every entity and relationship in the source document. Agents argue about a structured world model, not raw text.',
+      'A bias detection layer scores source documents for emotional language and tribal markers before the simulation starts — so agents know what they\'re reading is slanted.',
+      'Full simulation of 100 agents completes in ~90 seconds. Results export as PDF via ReportLab.',
+    ],
+    result: 'A prediction engine that produces emergent, crowd-sourced market sentiment — not one model\'s opinion, but the result of 100 agents arguing with each other until a consensus forms. Or doesn\'t.',
+    metric: '100 agents · ~90s simulation',
+    tech: ['Python', 'FastAPI', 'React.js', 'D3.js', 'WebSocket', 'Groq', 'Cerebras'],
+    link: 'https://ripple-lovat.vercel.app',
+  },
+  {
+    id: 'analytiq',
+    name: 'Analytiq',
+    year: '2026',
+    tagline: 'Your data. Your server. No invoice.',
+    problem: 'Segment costs $120/month. Mixpanel costs $28/month. Add PostHog, feature flags, a CDP — you\'re at $860+ before you\'ve written a line of product code. And every one of those services owns your data. We built the alternative that doesn\'t.',
+    build: [
+      'Multi-tenant isolation enforced at the PostgreSQL layer itself using Row-Level Security — not application-level filters that a bug can bypass. Bank-grade separation with zero performance penalty.',
+      'Password policy with live HaveIBeenPwned breach checking on signup. If your password appears in a known breach database, you\'re blocked before you ever log in.',
+      'An AI Copilot that accepts natural language questions and generates read-only SQL against your own data. "Which features drove retention last month?" becomes a query, not a meeting.',
+      'Anomaly detection using Z-score analysis on hourly metrics — the system tells you when something is wrong before you notice it on a dashboard.',
+      'Built-in GDPR tooling: user data export, deletion workflows, and opt-out management. Not an afterthought — baked into the schema from day one.',
+      '258-test suite with zero mocks. Every test runs against a real database. If it passes, it works.',
+    ],
+    result: 'A full product analytics stack — event tracking, e-commerce analytics, feature flags, AI Copilot, GDPR compliance — that runs on a single Docker Compose command on your own infrastructure.',
+    metric: '258 tests · 0 mocks · 6 containers',
+    tech: ['Python', 'FastAPI', 'Next.js 15', 'PostgreSQL', 'asyncpg', 'Docker', 'GoTrue'],
+    link: 'https://github.com/Tanya-Gitt/analytiq',
   },
   {
     id: 'shortlyst',
     name: 'Shortlyst',
-    tagline: 'Hiring Intelligence Tool',
-    desc: 'NLP scoring engine with spaCy lemmatization reducing recruiter screening from hours to seconds. 70/30 weighted scoring mirrors real hiring decisions. Bulk PDF/DOCX/TXT processing.',
-    tech: ['Python', 'spaCy', 'FastAPI', 'React.js', 'NLP'],
-    link: '#',
-    metric: '60% cost-per-hire reduction',
     year: '2025',
+    tagline: 'A recruiter\'s first hour shouldn\'t be a pile of PDFs.',
+    problem: 'A job post goes live. 400 resumes arrive by morning. A recruiter reads the first 30, skims the next 50, and gives up. The best candidate is somewhere in pile 3. This is not a hiring problem — it\'s a data problem. We solved it with NLP.',
+    build: [
+      'A scoring engine using spaCy lemmatization — not keyword matching. "Managed" and "managing" are the same thing. "PostgreSQL" and "Postgres" are the same thing. The engine understands that.',
+      'Weighted scoring architecture: 70% must-have skills, 30% nice-to-have. Mirrors how actual hiring decisions are made — not every skill matters equally.',
+      'Multi-format ingestion: PDF via pdfminer, DOCX via python-docx, TXT direct. Handles 1,000+ resumes at 200–500ms per document.',
+      'Word-boundary regex prevents false positives. A resume mentioning "MySQL experience" doesn\'t match "SQL" unless SQL is actually present.',
+    ],
+    result: 'Recruiters upload a job description, define their must-have and nice-to-have skills, and get a ranked, scored candidate list in seconds. The best person in pile 3 surfaces to the top.',
+    metric: '1,000+ resumes · 200–500ms each',
+    tech: ['Python', 'spaCy', 'FastAPI', 'React 19', 'pdfminer', 'Framer Motion'],
+    link: '#',
   },
   {
     id: 'trustlens',
     name: 'TrustLens',
-    tagline: 'Real-Time Website Trust Intelligence',
-    desc: '8-factor trust score (0–100) with full deduction breakdown. 4-tier data pipeline: curated breach DB → 859 verified HIBP breaches → API → live web search fallback.',
-    tech: ['Python', 'TypeScript', 'React.js', 'REST APIs'],
-    link: '#',
-    metric: '2s trust score · 859 breaches',
     year: '2025',
+    tagline: 'Before you enter your card. Before you trust the site.',
+    problem: 'Every day, people hand their data to websites they\'ve never heard of. There\'s no fast, honest way to know if a site has been breached before, how badly, or what kind of data leaked. Browser lock icons tell you the connection is encrypted. They say nothing about the company behind it.',
+    build: [
+      'A capped 0–100 scoring model with per-breach limits — no single incident can dominate the score. Five factors per breach: severity, recency, data sensitivity, scale, encryption failures.',
+      'Four-tier data pipeline: curated internal database first, then 859 verified HaveIBeenPwned domains, then live API lookup, then web search fallback. Unknown domains score 50 — genuine uncertainty, not false assurance.',
+      'All computation is server-side. The client receives a score and a breakdown — it cannot reconstruct the scoring logic or manipulate inputs.',
+      'A verification script that validates every mathematical invariant and API contract in the system before deployment.',
+    ],
+    result: 'A trust score with full transparency — every deduction explained, every source cited. Not a vibe check. A mathematical audit of a website\'s breach history.',
+    metric: '859 verified breaches · 5-factor scoring',
+    tech: ['Python', 'Flask', 'JavaScript', 'HaveIBeenPwned API', 'Docker'],
+    link: '#',
   },
   {
-    id: 'unified',
-    name: 'Unified Analytics',
-    tagline: 'Product & Revenue Intelligence Platform',
-    desc: 'Multi-tenant SaaS from scratch — product event tracking + revenue analytics in one self-hosted platform. Bank-grade data isolation via PostgreSQL Row-Level Security.',
-    tech: ['Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'asyncpg', 'Docker'],
+    id: 'competitive',
+    name: 'CompeteIQ',
+    year: '2025',
+    tagline: 'What your competitors changed this week. Before your next board meeting.',
+    problem: 'Product managers track competitors across five browser tabs, a spreadsheet, and two Slack channels. By the time the insight reaches a decision, it\'s outdated. Competitive intelligence deserves a real tool, not a cobbled workflow.',
+    build: [
+      'A Streamlit dashboard that centralises competitor monitoring, KPI tracking, and feature comparisons in one view — configurable per product.',
+      'Automated insight generation that surfaces changes and patterns from competitive data without manual interpretation.',
+      'SQLite-backed persistence so tracked metrics accumulate over time — enabling trend analysis, not just point-in-time snapshots.',
+      'User-configurable metrics so PMs define what competition looks like for their specific market.',
+    ],
+    result: 'A centralised competitive intelligence tool that turns fragmented browser tabs into structured, persistent, insight-ready data — built specifically for product managers who need answers before meetings, not after.',
+    metric: 'Real-time monitoring · automated insights',
+    tech: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'SQLite'],
     link: '#',
-    metric: '164 tests · 0 failures',
-    year: '2026',
   },
 ];
 

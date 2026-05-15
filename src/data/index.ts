@@ -104,7 +104,7 @@ export const projects: Project[] = [
     result: 'A full product analytics stack — event tracking, e-commerce analytics, feature flags, AI Copilot, GDPR compliance — that runs on a single Docker Compose command on your own infrastructure.',
     metric: '258 tests · 0 mocks · 6 containers',
     tech: ['Python', 'FastAPI', 'Next.js 15', 'TypeScript', 'PostgreSQL', 'asyncpg', 'Docker', 'Docker Compose', 'GoTrue', 'Redis', 'JWT', 'React Query', 'Recharts', 'Pydantic'],
-    link: 'https://github.com/Tanya-Gitt/analytiq',
+    link: 'https://analytiq-phi.vercel.app/dashboard',
     role: 'Solo full-stack from schema to frontend — designed the PostgreSQL RLS isolation model, built the FastAPI backend and Next.js UI, engineered the AI Copilot, and wrote the 258-test zero-mock test suite.',
   },
   {
